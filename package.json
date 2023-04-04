@@ -1,5 +1,6 @@
 {
   "name": "capitals-app",
+  "homepage": "https://myusername.github.io/my-app",
   "private": true,
   "version": "1.0.0",
   "engines": {

@@ -1,6 +1,6 @@
 {
   "name": "capitals-app",
-  "homepage": "https://myusername.github.io/my-app",
+  "homepage": "https://anveshvanam.github.io/boxigo-assignment",
   "private": true,
   "version": "1.0.0",
   "engines": {
@@ -29,6 +29,8 @@
     "react-scripts": "4.0.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

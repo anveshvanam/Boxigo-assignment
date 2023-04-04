@@ -59,3 +59,32 @@
   align-items: center;
   text-align: center;
 }
+
+.old-new-details-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Firefox */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #fb141e #ffffff;
+}
+
+/* Other browsers */
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #fb141e;
+  border-radius: 0px;
+  border: 1px solid #000000;
+}

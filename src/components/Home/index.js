@@ -16,10 +16,23 @@ const apiStatusConstants = {
 }
 
 class Home extends Component {
-  state = {movesList: [], apiStatus: apiStatusConstants.initial}
+  state = {
+    movesList: [],
+    apiStatus: apiStatusConstants.initial,
+    expandedItem: '',
+  }
 
   componentDidMount() {
     this.fetchData()
+  }
+
+  expandMoveCard = id => {
+    const {expandedItem} = this.state
+    if (id === expandedItem) {
+      this.setState({expandedItem: ''})
+    } else {
+      this.setState({expandedItem: id})
+    }
   }
 
   fetchData = async () => {
@@ -91,7 +104,7 @@ class Home extends Component {
   })
 
   renderAppSuccessView = () => {
-    const {movesList} = this.state
+    const {movesList, expandedItem} = this.state
 
     return (
       <div className="bg-container">
@@ -125,7 +138,12 @@ class Home extends Component {
           <h1 className="heading">MY MOVES</h1>
           <ul className="moves-list">
             {movesList.map(eachItem => (
-              <MoveCard moveDetails={eachItem} key={eachItem.estimateId} />
+              <MoveCard
+                moveDetails={eachItem}
+                key={eachItem.estimateId}
+                isExpanded={eachItem.estimateId === expandedItem}
+                expandMoveCard={this.expandMoveCard}
+              />
             ))}
           </ul>
         </div>

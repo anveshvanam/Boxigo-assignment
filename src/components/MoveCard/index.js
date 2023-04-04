@@ -1,12 +1,12 @@
 import './index.css'
 import {HiOutlineArrowNarrowRight, HiOutlinePencil} from 'react-icons/hi'
-import {AiFillHome, AiFillCheckSquare} from 'react-icons/ai'
+import {AiFillHome, AiFillCheckSquare, AiFillWarning} from 'react-icons/ai'
 import {TfiPackage} from 'react-icons/tfi'
 import {GiPathDistance} from 'react-icons/gi'
 import {FaTruckMoving} from 'react-icons/fa'
 
 const MoveCard = props => {
-  const {moveDetails} = props
+  const {moveDetails, isExpanded, expandMoveCard} = props
   const {
     callBack,
     customStatus,
@@ -46,6 +46,69 @@ const MoveCard = props => {
     userId,
   } = moveDetails
 
+  const onClickExpand = () => {
+    expandMoveCard(estimateId)
+  }
+
+  const renderAdditionalInfo = () => {
+    const {inventory} = items
+    // console.log(inventory)
+    return (
+      <div className="expanded-info-container">
+        <div className="additional-info-container">
+          <div className="additional-info">
+            <h1 className="info-heading">Additional Information</h1>
+            <p className="">Test Data</p>
+          </div>
+          <button type="button" className="edit-button">
+            Edit Additional Info
+          </button>
+        </div>
+        <div className="house-details-container">
+          <div className="title-edit-btn-container">
+            <h1 className="info-heading">House Details</h1>
+            <button type="button" className="edit-button">
+              Edit House Details
+            </button>
+          </div>
+          <h1 className="info-heading orange-text">Existing House Details</h1>
+          <div className="old-new-details-container">
+            <div className="">
+              <p className="bold-text">Floor No.</p>
+              <p className="">{oldFloorNo}</p>
+            </div>
+            <div className="">
+              <p className="bold-text">Elevator Available</p>
+              <p className="">{oldElevatorAvailability}</p>
+            </div>
+            <div className="">
+              <p className="bold-text">
+                Distance from Elevator / Staricase to Truck
+              </p>
+              <p className="">{oldParkingDistance}</p>
+            </div>
+          </div>
+          <h1 className="info-heading orange-text">New House Details</h1>
+          <div className="old-new-details-container">
+            <div className="">
+              <p className="bold-text">Floor No.</p>
+              <p className="">{newFloorNo}</p>
+            </div>
+            <div className="">
+              <p className="bold-text">Elevator Available</p>
+              <p className="">{newElevatorAvailability}</p>
+            </div>
+            <div className="">
+              <p className="bold-text">
+                Distance from Elevator / Staricase to Truck
+              </p>
+              <p className="">{newParkingDistance}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
   return (
     <div className="move-card-container">
       <div className="from-to-container">
@@ -99,7 +162,11 @@ const MoveCard = props => {
           is flexible
         </p>
         <div className="btns-container">
-          <button className="view-details-button button" type="button">
+          <button
+            className="view-details-button button"
+            type="button"
+            onClick={onClickExpand}
+          >
             View move details
           </button>
           <button className="quotes-awaiting-button button" type="button">
@@ -107,6 +174,12 @@ const MoveCard = props => {
           </button>
         </div>
       </div>
+      <p className="disclaimer">
+        <AiFillWarning className="icon" />
+        <span className="bold-text">Disclaimer: </span> Please update your move
+        date before 2 days of shifting
+      </p>
+      {isExpanded ? renderAdditionalInfo() : ''}
       <hr className="h-line" />
     </div>
   )

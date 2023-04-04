@@ -89,3 +89,53 @@
   display: flex;
   justify-content: space-between;
 }
+
+.disclaimer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.bold-text {
+  font-weight: 600;
+}
+
+.expanded-info-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.additional-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.additional-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-button {
+  background-color: #000000;
+  color: #ffffff;
+  width: 150px;
+  height: 35px;
+  border: 0px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.info-heading {
+  font-size: 20px;
+}
+
+.house-details-container {
+  display: flex;
+  flex-direction: column;
+}
+.title-edit-btn-container {
+  display: flex;
+  justify-content: space-between;
+}

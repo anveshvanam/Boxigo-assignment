@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/boxigo-assignment/static/css/main.abba733a.chunk.css",
+    "main.js": "/boxigo-assignment/static/js/main.3b38a372.chunk.js",
+    "main.js.map": "/boxigo-assignment/static/js/main.3b38a372.chunk.js.map",
+    "runtime-main.js": "/boxigo-assignment/static/js/runtime-main.23b64479.js",
+    "runtime-main.js.map": "/boxigo-assignment/static/js/runtime-main.23b64479.js.map",
+    "static/js/2.be4beeef.chunk.js": "/boxigo-assignment/static/js/2.be4beeef.chunk.js",
+    "static/js/2.be4beeef.chunk.js.map": "/boxigo-assignment/static/js/2.be4beeef.chunk.js.map",
+    "index.html": "/boxigo-assignment/index.html",
+    "static/css/main.abba733a.chunk.css.map": "/boxigo-assignment/static/css/main.abba733a.chunk.css.map",
+    "static/js/2.be4beeef.chunk.js.LICENSE.txt": "/boxigo-assignment/static/js/2.be4beeef.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.23b64479.js",
+    "static/js/2.be4beeef.chunk.js",
+    "static/css/main.abba733a.chunk.css",
+    "static/js/main.3b38a372.chunk.js"
+  ]
+}

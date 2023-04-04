@@ -1,4 +1,11 @@
 import {Component} from 'react'
+import {ThreeDots} from 'react-loader-spinner'
+import {FaTruckMoving} from 'react-icons/fa'
+import {CgProfile} from 'react-icons/cg'
+import {HiOutlineBuildingOffice2} from 'react-icons/hi2'
+import {AiOutlineLogout} from 'react-icons/ai'
+import MoveCard from '../MoveCard'
+
 import './index.css'
 
 const apiStatusConstants = {
@@ -26,6 +33,7 @@ class Home extends Component {
       const updatedData = data.Customer_Estimate_Flow.map(eachItem =>
         this.formatData(eachItem),
       )
+      this.setState({movesList: updatedData})
       console.log(updatedData)
     } else {
       this.setState({apiStatus: apiStatusConstants.failure})
@@ -82,26 +90,83 @@ class Home extends Component {
     userId: item.user_id,
   })
 
-  render() {
+  renderAppSuccessView = () => {
     const {movesList} = this.state
+
     return (
       <div className="bg-container">
         <div className="sidebar">
-          <li className="sidebar-list-item active-item">MY MOVES</li>
-          <li className="sidebar-list-item">MY PROFILE</li>
-          <li className="sidebar-list-item">GET QUOTE</li>
-          <li className="sidebar-list-item">LOGOUT</li>
+          <li className="sidebar-list-item active-item">
+            <button type="button" className="sidebar-btn">
+              <FaTruckMoving className="sidebar-icon" />
+              MY MOVES
+            </button>
+          </li>
+          <li className="sidebar-list-item">
+            <button type="button" className="sidebar-btn">
+              <CgProfile className="sidebar-icon" />
+              MY PROFILE
+            </button>
+          </li>
+          <li className="sidebar-list-item">
+            <button type="button" className="sidebar-btn">
+              <HiOutlineBuildingOffice2 className="sidebar-icon" />
+              GET QUOTE
+            </button>
+          </li>
+          <li className="sidebar-list-item">
+            <button type="button" className="sidebar-btn">
+              <AiOutlineLogout className="sidebar-icon" />
+              LOGOUT
+            </button>
+          </li>
         </div>
         <div className="main-container">
           <h1 className="heading">MY MOVES</h1>
           <ul className="moves-list">
             {movesList.map(eachItem => (
-              <MoveCard moveDetails={eachItem} key={eachItem.userId} />
+              <MoveCard moveDetails={eachItem} key={eachItem.estimateId} />
             ))}
           </ul>
         </div>
       </div>
     )
+  }
+
+  renderLoadingView = () => (
+    <div className="loader">
+      <ThreeDots
+        height="80"
+        width="80"
+        radius="9"
+        color="#ec5642"
+        ariaLabel="three-dots-loading"
+      />
+    </div>
+  )
+
+  renderFailureView = () => (
+    <div className="failure-view">
+      <h1 className="heading">There seems to a Server Error..</h1>
+    </div>
+  )
+
+  renderApp = () => {
+    const {apiStatus} = this.state
+    switch (apiStatus) {
+      case apiStatusConstants.success:
+        return this.renderAppSuccessView()
+      case apiStatusConstants.inProgress:
+        return this.renderLoadingView()
+      case apiStatusConstants.failure:
+        return this.renderFailureView()
+      default:
+        return null
+    }
+  }
+
+  render() {
+    return this.renderApp()
   }
 }
 

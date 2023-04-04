@@ -1,0 +1,91 @@
+.move-card-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.from-to-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 10rem;
+}
+
+.location-details-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.disclaimer-container {
+  display: flex;
+}
+
+.h-line {
+  width: 100%;
+  color: grey;
+  height: 1px;
+  align-self: flex-start;
+  text-align: start;
+  color: #f7f7f7;
+}
+
+.from-text {
+  width: 400px;
+}
+
+.to-text {
+  width: 400px;
+}
+
+.arrow-icon {
+  color: #ec5642;
+  font-size: 40px;
+  height: 45px;
+  width: 60px;
+  padding: 5px;
+  border-radius: 50%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.orange-text {
+  color: #ec5642;
+  font-weight: 600;
+}
+
+.icon {
+  color: #ec5642;
+  margin-right: 10px;
+  font-size: 25px;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+}
+.unstyled-icon {
+  margin-left: 10px;
+}
+
+.button {
+  width: 140px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.view-details-button {
+  color: #ec5642;
+  background-color: #ffffff;
+  border: 2px solid #ec5642;
+}
+.quotes-awaiting-button {
+  color: #ffffff;
+  background-color: #ec5642;
+  border: 0px;
+}
+.btns-container {
+  width: 290px;
+  display: flex;
+  justify-content: space-between;
+}

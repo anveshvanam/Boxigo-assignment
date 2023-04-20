@@ -139,3 +139,43 @@
   display: flex;
   justify-content: space-between;
 }
+
+.inventory-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.inventory-items-list {
+  width: 100%;
+  margin: 0px;
+}
+
+.category-list {
+  display: flex;
+  list-style-type: none;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.items-within-category {
+  list-style-type: none;
+  width: 100%;
+}
+
+.item-within-category-item {
+  width: 100%;
+  justify-content: space-between;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+}
+.item-type {
+  font-weight: 600;
+}
+
+.item-name {
+  margin-left: 38px;
+}

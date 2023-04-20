@@ -1,0 +1,34 @@
+.orange-text {
+  color: #ec5642;
+  font-weight: 600;
+}
+
+.inventory-item {
+  list-style-type: none;
+  background-color: #e5e5e5;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 0px 10px 0px 30px;
+  align-items: center;
+}
+
+.orders-quantity {
+  background-color: #ec5642;
+  color: #e5e5e5;
+  margin-left: 20px;
+  padding: 0px 10px;
+  border-radius: 10px;
+}
+
+.inventory-arrow-icon {
+  font-size: 20px;
+}
+
+.icon-btn {
+  background-color: transparent;
+  border: 0px;
+  cursor: pointer;
+}
